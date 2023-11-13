@@ -76,9 +76,9 @@ def save(rows, dst: str):
         cells = row.select("td")
         sheet.write(i, 0, cells[0].get_text())
 
-        num1, num2 = cells[1].get_text().split("-")
-        sheet.write(i, 1, num1)
-        sheet.write(i, 2, num2)
+        nums = cells[1].get_text()
+        sheet.write(i, 1, nums[:-3])
+        sheet.write(i, 2, nums[-2:])
         sheet.write(i, 3, cells[2].get_text())
         sheet.write(i, 4, cells[3].get_text())
         sheet.write(i, 5, cells[4].get_text())
